@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.logoC {
+  text-align: left;
+  width: 10%;
+  margin-left: 5%;
+  margin-top: 3%;
+} */
+.heroC {
+  text-align: center;
+  color: white;
+  padding-top:1%;
+  padding-bottom:5%;
+}
+.h1HeroC {
+  font-family: "Outfit";
+  font-size: 60px;
+  font-weight:bold;
+}
+
+.pHeroC {
+  font-family: "Inter";
+  font-size: 16px;
+ 
+}
+
+.grapichresults{
+  margin:auto;
+  text-align:center;
+}
+.resultLeftC{
+  display:inline-block;
+  font-family: "Outfit";
+  font-size: 60px;
+  color: white;
+  vertical-align: top;
+
+}
+.resultLeftC h2{
+  font-family: "Outfit";
+  font-size: 60px;
+  color: white;
+  text-align:center;
+}
+#percCorretteC{
+  font-family: "Outfit";
+  font-size: 60px;
+  color: white;
+  text-align:center;
+  font-weight: bold;
+}
+#pQuestionsCorrectC{
+  font-family: "Outfit";
+  font-size: 1.2rem;
+  color: white;
+  text-align:center;
+  padding-top: 1%;
+ 
+}
+
+.grapichC::before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+left:0;
+bottom:0;
+border-radius:50%;
+background-image: conic-gradient(#d20094 0% 34%, #00ffff 0% 66%); /*0% sta per sfumatura, e il valore successivo quanto cerchio occupa*/
+mask: radial-gradient(farthest-side, transparent 67%, black 67%); /*permette di rendere trasparente il centro del div, cosicché si vede il contenuto*/
+z-index: 1; 
+}
+.grapichC{
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  position:relative;
+  display:inline-block;
+  vertical-align: top;
+  
+}
+.contentGrapichC{
+  position: absolute;
+  left:2rem;
+  top:2rem;
+}
+#pTitleC{
+  color:white;
+  font-size: 13px;
+  margin-top:25%;
+  font-weight:bold;
+  font-family: "Inter";
+ margin-right:3%;
+}
+#pSubtitleC{
+color: #00FFFF;
+font-size: 13px;
+margin-top:1%;
+font-weight:bold;
+font-family: "Inter";
+}
+#certificateC{
+  font-size: 10px;
+  margin-top:9%;  
+  font-family: "Inter";
+  color:rgb(224, 224, 224);
+  text-align:center;
+}
+#emailCertificateC{
+  font-size: 10px;
+  padding-top:1.5%;  
+  font-family: "Inter";
+  color:rgb(224, 224, 224);
+  text-align:center;
+}
+#percWrongC{
+  font-family: "Outfit";
+  font-size: 60px;
+  color: white;
+  text-align:center;
+  font-weight: bold;
+}
+#pQuestionsWrongC{
+  font-family: "Outfit";
+  font-size: 1.2rem;
+  color: white;
+  text-align:center;
+  padding-top: 1%;
+ 
+}
+
+
+.resultRightC{
+  display: inline-block;
+  vertical-align: top;
+ }
+.resultRightC h2{
+  font-family: "Outfit";
+  font-size: 60px;
+  color: white;
+}
+.resultRightC p{
+
+}
+.divButtonC{
+  text-align: center;
+  margin-block:2.5rem
+}
+
+#buttonC {
+  font-family: "Inter";
+  font-size: 16px;
+  background-color: #47196C;
+  color: white;
+  border: 1.5px solid white;
+  padding-inline: 2.5%;
+  padding-block: 1%;
+}

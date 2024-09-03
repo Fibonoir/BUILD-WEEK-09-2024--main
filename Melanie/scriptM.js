@@ -93,7 +93,7 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-
+let countdown = 2;
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -130,25 +130,36 @@ function showQuestion() {
   questionNumber.innerHTML =
     "QUESTION " + (currentQuestionIndex + 1) + "<span>/10</span>";
   questionContainer.appendChild(questionNumber);
+  countdown = 60;
+  countdown.reset();
 }
 
 function handleAnswer(selectedAnswer) {
   let currentQuestion = questions[currentQuestionIndex];
+  let answerButtons = document.querySelectorAll("#answers button");
+
+  answerButtons.forEach((button) => {
+    button.disabled = true;
+    if (button.textContent === currentQuestion.correct_answer) {
+      button.classList.add("verde");
+    } else if (button.textContent === selectedAnswer) {
+      button.classList.add("rosso");
+    }
+  });
 
   if (selectedAnswer === currentQuestion.correct_answer) {
-    alert("Risposta Corretta!");
     score++;
-  } else {
-    alert("Risposta Sbagliata!");
   }
 
-  currentQuestionIndex++;
-
-  if (currentQuestionIndex < questions.length) {
-    showQuestion();
-  } else {
-    showFinalScore();
-  }
+  setTimeout(() => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      document.getElementById("countdown").style.display = "none";
+      showFinalScore();
+    }
+  }, 1000);
 }
 
 function showFinalScore() {
@@ -164,5 +175,29 @@ function showFinalScore() {
     "Hai ottenuto " + score + " su " + questions.length + " domande corrette!";
   questionContainer.appendChild(scoreMessage);*/
 }
+
+let secondsElement = document.getElementById("seconds");
+let circle = document.querySelector(".progress-ring__circle");
+let radius = circle.r.baseVal.value;
+let circumference = 2 * Math.PI * radius;
+
+circle.style.strokeDasharray = `${circumference} ${circumference}`;
+circle.style.strokeDashoffset = circumference;
+
+function setProgress(percent) {
+  let offset = circumference - (percent / 100) * circumference;
+  circle.style.strokeDashoffset = offset;
+}
+
+let timer = setInterval(() => {
+  secondsElement.innerHTML = countdown;
+  setProgress((countdown / 60) * 100);
+
+  if (countdown === 0) {
+    countdown.pause();
+  }
+
+  countdown--;
+}, 1000);
 
 document.addEventListener("DOMContentLoaded", showQuestion);

@@ -12,6 +12,26 @@ body {
     color: white;
 }
 
+
+.inter-main {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+}
+
+
+.outfit-title {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 60px;
+}
+
+/* Stile HEADER */
+
 header {
     width: 10rem;
 }
@@ -21,55 +41,111 @@ header {
     margin: 2rem 4rem;
 }
 
+/* Stile generale MAIN */
+
 main {
     text-align: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
 h1 {
     margin: 1rem;
+
 }
 
 .p1-v {
-    width: 48ch;
-    margin: 0 auto;
+    width: 42ch;
+    margin: 1rem auto;
 }
+
+
+/* Stile STAR RATING */
 
 .parent-div-v {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2rem 0 4rem;
 }
 
 .star-v {
     display: inline-block;
+    margin-inline: 0.4rem;
 
 }
 
 .star-v path {
     fill: #0B113B;
-    transition: fill 0.2s ease
+    transition: fill 0.2s ease;
 }
 
 .star-v.hovered-v path {
     fill: #00FFFF;
+}
+
+@keyframes scale-up {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.4);
+    }
 }
 
 .star-v:hover svg{
-    height: 3.5rem;
-    width: 3.5rem;
     filter: drop-shadow(0 0 25px #0ff);
-    transition: 0.2s ease;
+    animation: scale-up 0.2s ease forwards;
 }
 
 .star-v.hovered-v path {
     fill: #00FFFF;
-}
-
-.star-v:hover {
-    height: 3.5rem;
-    width: 3.5rem;
 }
 
 .clicked-v path{
     fill: #00FFFF;
+}
+
+/* Stile FORM */
+
+@keyframes scale-up-form {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.input-form {
+    display: block;
+    width: 80%;
+    margin: 0 auto 3.5rem;
+    padding: 0.5rem 2rem;
+    background: transparent;
+    border: none;
+    border-bottom: solid 3px;
+    border-color: #900080;
+    outline: none;
+    color: white;
+}
+
+.input-form:hover {
+    animation: scale-up-form 0.2s ease forwards;
+}
+
+.button-form {
+    display: block;
+    margin: 0 auto;
+    padding: 1rem 3rem;
+    background-color: #00FFFF;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border: none;
+    filter: drop-shadow(0 0 12px #00FFFF);
+}
+
+
+.button-form:hover {
+    animation: scale-up-form 0.2s ease forwards;
 }

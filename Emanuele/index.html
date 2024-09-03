@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WELCOME PAGE</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+  </head>
+  <body>
+    <div class="logo-container">
+      <img src="./assets/epicode_logo.png" alt="logo" />
+    </div>
+    <div class="titolo">
+      <h1><span>Welcome to</span> <br />your exam</h1>
+    </div>
+    <div id="desc-container">
+      <h2>Instructions</h2>
+      <h3>
+        We don't expect most engineers to know the answers to all of these <br />
+        questions, so don't worry if you're unsure of a few of them.
+      </h3>
+    </div>
+    <div id="list-container">
+      <ul>
+        <li>Each question is <b>timed</b> and can only be <b>answered once</b>.</li>
+        <li>Changing browser tab or opening other windows will <b>invalidate the question</b>.</li>
+        <li>This exam will take approx. <b>0-5 minutes</b>.</li>
+      </ul>
+    </div>
+    <br />
+    <div class="checkbox-container">
+      <label class="custom-checkbox">
+        <input type="checkbox" id="myCheckbox" />
+        <span class="checkmark"></span>
+        <p>I promise to answer myself without help from anyone</p>
+      </label>
+      <button id="proceedButton">PROCEED</button>
+    <script>
+      document.getElementById("proceedButton").addEventListener("click", function () {
+        var checkbox = document.getElementById("myCheckbox");
+        if (!checkbox.checked) {
+          alert("Please check the box to confirm your promise before proceeding.");
+        } else {
+          alert("proceeding...");
+        }
+      });
+    </script>
+    <footer></footer>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+body{
+    background-image: url(./assets/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-inline: 550px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+.logo-container img{
+    width: 200px;
+    margin-bottom: 50px;
+}
+.titolo h1{
+    color: white;
+    font-size: 80px;
+    line-height: 0.8;
+    font-family: 'Outfit', sans-serif;
+}
+.titolo span{
+    color: white;
+    font-size: 80px;
+    font-weight: lighter;
+    font-family: 'Outfit', sans-serif;
+}
+#desc-container h2{
+    color: #d20094;
+    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 7px;
+}
+#desc-container h3{
+    display: block;
+    color: white;
+    margin-top: 0px;
+    font-weight: lighter;
+    font-family: 'inter', sans-serif;
+    margin-bottom: 50px;
+}
+#list-container li{
+    color: white;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: lighter;
+    font-family: 'inter', sans-serif;
+    margin: 7px;
+}
+.custom-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    margin-top: 70px;
+}
+.custom-checkbox .checkmark {
+    width: 17px;
+    height: 17px;
+    border: 2px solid white;
+    background-color: transparent;
+    position: relative;
+    margin-right: 8px;
+}
+.custom-checkbox p {
+    color: white;
+    font-size: 14px;
+    font-family: 'inter', sans-serif;
+    font-weight: bold;
+}
+.custom-checkbox .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    background-color: transparent;
+    position: relative;
+    margin-right: 15px;
+}
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px; 
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.custom-checkbox p {
+    display: block;
+    color: white;
+    font-size: 14px;
+    font-family: 'inter', sans-serif;
+    font-weight: bold;
+    padding-right: 90px;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+button {
+    display: inline-block;
+    margin-top: 70px;
+    background-color: #00ffff;
+    color: black; 
+    border: none;
+    padding: 20px 60px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px; 
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0; 
+    transition: background-color 0.3s ease;
+}

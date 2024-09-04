@@ -140,6 +140,8 @@ function handleAnswer(selectedAnswer) {
 
   answerButtons.forEach((button) => {
     button.disabled = true;
+    button.classList.add("no-hover");
+
     if (button.textContent === currentQuestion.correct_answer) {
       button.classList.add("verde");
     } else if (button.textContent === selectedAnswer) {
@@ -189,15 +191,84 @@ function setProgress(percent) {
   circle.style.strokeDashoffset = offset;
 }
 
-let timer = setInterval(() => {
-  secondsElement.innerHTML = countdown;
-  setProgress((countdown / 60) * 100);
+let timer;
 
-  if (countdown === 0) {
-    countdown.pause();
-  }
+function startTimer() {
+  clearInterval(timer);
+  countdown = 60;
 
-  countdown--;
-}, 1000);
+  timer = setInterval(() => {
+    secondsElement.innerHTML = countdown;
+    setProgress((countdown / 60) * 100);
+
+    if (countdown === 0) {
+      clearInterval(timer);
+      handleTimeOut();
+    } else {
+      countdown--;
+    }
+  }, 1000);
+}
+
+function showQuestion() {
+  let questionContainer = document.getElementById("questionsContainer");
+  let currentQuestion = questions[currentQuestionIndex];
+
+  questionContainer.innerHTML = "";
+
+  let questionTitle = document.createElement("h1");
+  questionTitle.textContent = currentQuestion.question;
+  questionContainer.appendChild(questionTitle);
+
+  let answersContainer = document.createElement("div");
+  answersContainer.id = "answers";
+  questionContainer.appendChild(answersContainer);
+
+  let allAnswers = [
+    ...currentQuestion.incorrect_answers,
+    currentQuestion.correct_answer,
+  ];
+  allAnswers.sort(() => Math.random() - 0.5);
+
+  allAnswers.forEach(function (answer) {
+    let answerButton = document.createElement("button");
+    answerButton.textContent = answer;
+    answerButton.addEventListener("click", function () {
+      handleAnswer(answer);
+    });
+    answersContainer.appendChild(answerButton);
+  });
+
+  let questionNumber = document.createElement("h2");
+  questionNumber.innerHTML =
+    "QUESTION " + (currentQuestionIndex + 1) + "<span>/10</span>";
+  questionContainer.appendChild(questionNumber);
+
+  startTimer();
+}
+
+function handleTimeOut() {
+  let currentQuestion = questions[currentQuestionIndex];
+  let answerButtons = document.querySelectorAll("#answers button");
+
+  answerButtons.forEach((button) => {
+    button.disabled = true;
+    if (button.textContent === currentQuestion.correct_answer) {
+      button.classList.add("verde");
+    } else {
+      button.classList.add("rosso");
+    }
+  });
+
+  setTimeout(() => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      document.getElementById("countdown").style.display = "none";
+      showFinalScore();
+    }
+  }, 1000);
+}
 
 document.addEventListener("DOMContentLoaded", showQuestion);

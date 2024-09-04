@@ -134,3 +134,12 @@ span {
   background-color: red;
   color: white;
 }
+
+.no-hover {
+  pointer-events: none;
+}
+
+button.verde.no-hover:hover,
+button.rosso.no-hover:hover {
+  background: inherit;
+}

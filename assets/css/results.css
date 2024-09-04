@@ -5,9 +5,9 @@
 * {
   box-sizing: border-box;
 }
-
-/* body {
-  background-image: url(../img/bg.jpg);
+/* 
+body {
+  background-image: url(../Melanie/assets/bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -17,6 +17,9 @@
   margin-left: 5%;
   margin-top: 3%;
 } */
+ .hidden{
+  display: none;
+ }
 .heroC {
   text-align: center;
   color: white;

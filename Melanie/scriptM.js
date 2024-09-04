@@ -93,7 +93,7 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-let countdown = 2;
+let countdown = 60;
 let currentQuestionIndex = 0;
 let score = 0;
 

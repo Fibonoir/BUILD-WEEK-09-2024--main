@@ -5,9 +5,6 @@
 * {
   box-sizing: border-box;
 }
-.hidden{
-  display:none;
-}
 
 /* body {
   background-image: url(../img/bg.jpg);
@@ -23,21 +20,26 @@
 .heroC {
   text-align: center;
   color: white;
-  margin-top: 20%;
+  margin-top: 17%;
 }
 .h1HeroC {
   font-family: "Outfit";
   font-size: 60px;
-  font-weight:bold;
+  font-weight: bold;
+  position: relative;
+  bottom:17vh;
+ 
 }
 
 .pHeroC {
   font-family: "Inter";
   font-size: 16px;
- 
+  position: relative;
+  bottom: 22vh;
+
 }
 
-.graphicresults{
+.grapichresults{
   margin:auto;
   text-align:center;
 }
@@ -47,6 +49,9 @@
   font-size: 60px;
   color: white;
   vertical-align: top;
+  position:relative;
+  right: 25%;
+  bottom: 7vh;
 
 }
 .resultLeftC h2{
@@ -68,68 +73,77 @@
   color: white;
   text-align:center;
   padding-top: 1%;
- 
+
 }
 .wrapperC{
-    position: relative;
-    display: inline-block;
+  position: absolute;
+  display: inline-block;
+  right: 38%;
+  top: 39%;
 }
-.graphicC{
-  width: 280px;
-  height: 280px;
+.grapichC{
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   position: relative;
-  
   vertical-align: top;
   background-image: conic-gradient(#d20094 0% 34%, #00ffff 0% 66%);
   mask: radial-gradient(farthest-side, transparent 67%, black 67%); /*permette di rendere trasparente il centro del div, cosicché si vede il contenuto*/
   z-index: 1;  
 }
-.contentGraphicC{
+.contentGrapichC{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 240px; /* Adjusted to fit within the circle */
-  height: 240px; /* Adjusted to fit within the circle */
+  width: 280px; /* Adjusted to fit within the circle */
+  height: 280px; /* Adjusted to fit within the circle */
   text-align: center; 
   background-color:transparent; 
   border-radius: 50%; /* Arrotonda per adattarsi al cerchio */
-  padding: 40px 20px;
+ padding-top: 25%; 
+ padding-inline:15%; /* 40px 20px; */
   box-sizing: border-box; /* Include il padding nelle dimensioni totali */
   z-index: 2;
-  
-  
-}
-/*classe del titolo e del sottotitolo del grafico*/
-.pTitSubGraphicC{ 
-  font-size: 13px;
-  font-weight:bold;
-  font-family: "Inter";
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Aggiunta un'ombra al testo per migliorarne la leggibilità */
+
+
 }
 #pTitleC{
-  color:white; 
-  margin-top:25%;  
+  color:white;
+  font-size: 16px;
+  margin-top:25%;
+  font-weight:bold;
+  font-family: "Inter";
   margin:2% 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Aggiungi un'ombra al testo per migliorarne la leggibilità */
+
 }
 #pSubtitleC{
 color: #00FFFF;
+font-size: 16px;
+margin-top:1%;
+font-weight:bold;
+font-family: "Inter";
 margin:2% 0;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-.pContentGraphicC{
-  font-size: 10px;
+#certificateC{
+  font-size: 13px;
+  margin-top:9%;  
   font-family: "Inter";
   color:rgb(224, 224, 224);
   text-align:center;
-  margin:2% 0;
+
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-#certificateC{  
-  margin-top:9%;   
-}
-#emailCertificateC{  
-  padding-top:1.5%;   
+#emailCertificateC{
+  font-size: 13px;
+  padding-top:2%;  
+  font-family: "Inter";
+  color:rgb(224, 224, 224);
+  text-align:center;
+
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 #percWrongC{
   font-family: "Outfit";
@@ -144,13 +158,16 @@ margin:2% 0;
   color: white;
   text-align:center;
   padding-top: 1%;
- 
+
 }
 
 
 .resultRightC{
   display: inline-block;
   vertical-align: top;
+  position: relative;
+  left: 22%;
+  bottom:7vh;
  }
 .resultRightC h2{
   font-family: "Outfit";
@@ -160,8 +177,13 @@ margin:2% 0;
 
 .divButtonC{
   text-align: center;
-  margin-block:2.5rem
+  margin-block: 2.5rem;
+  position: relative;
+  top: 10vh;
+  margin-right:1.5rem;
+ 
 }
+
 
 #buttonC {
   font-family: "Inter";
@@ -171,4 +193,11 @@ margin:2% 0;
   border: 1.5px solid white;
   padding-inline: 2.5%;
   padding-block: 1%;
+  width: 150px;
+  border-radius: 0;  
+}
+#buttonC:hover{
+  transform: scale(1.05);
+  background-color: #00FFFF;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.4);
 }

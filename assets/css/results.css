@@ -5,6 +5,9 @@
 * {
   box-sizing: border-box;
 }
+.hidden{
+  display:none;
+}
 
 /* body {
   background-image: url(../img/bg.jpg);
@@ -34,7 +37,7 @@
  
 }
 
-.grapichresults{
+.graphicresults{
   margin:auto;
   text-align:center;
 }
@@ -67,31 +70,22 @@
   padding-top: 1%;
  
 }
-
-/* .grapichC::before{
-content:"";
-position:absolute;
-top:0;
-right:0;
-left:0;
-bottom:0;
-border-radius:50%;
-background-image: conic-gradient(#d20094 0% 34%, #00ffff 0% 66%); /*0% sta per sfumatura, e il valore successivo quanto cerchio occupa*/
-/* mask: radial-gradient(farthest-side, transparent 67%, black 67%); /*permette di rendere trasparente il centro del div, cosicché si vede il contenuto*/
-/* z-index: 1; 
-}  */
-.grapichC{
+.wrapperC{
+    position: relative;
+    display: inline-block;
+}
+.graphicC{
   width: 280px;
   height: 280px;
   border-radius: 50%;
   position: relative;
-  display: inline-block;
+  
   vertical-align: top;
   background-image: conic-gradient(#d20094 0% 34%, #00ffff 0% 66%);
   mask: radial-gradient(farthest-side, transparent 67%, black 67%); /*permette di rendere trasparente il centro del div, cosicché si vede il contenuto*/
   z-index: 1;  
 }
-.contentGrapichC{
+.contentGraphicC{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -101,48 +95,41 @@ background-image: conic-gradient(#d20094 0% 34%, #00ffff 0% 66%); /*0% sta per s
   text-align: center; 
   background-color:transparent; 
   border-radius: 50%; /* Arrotonda per adattarsi al cerchio */
-  padding: 20px;
+  padding: 40px 20px;
   box-sizing: border-box; /* Include il padding nelle dimensioni totali */
- 
+  z-index: 2;
   
   
 }
-#pTitleC{
-  color:white;
+/*classe del titolo e del sottotitolo del grafico*/
+.pTitSubGraphicC{ 
   font-size: 13px;
-  margin-top:25%;
   font-weight:bold;
   font-family: "Inter";
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Aggiunta un'ombra al testo per migliorarne la leggibilità */
+}
+#pTitleC{
+  color:white; 
+  margin-top:25%;  
   margin:2% 0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Aggiungi un'ombra al testo per migliorarne la leggibilità */
-
 }
 #pSubtitleC{
 color: #00FFFF;
-font-size: 13px;
-margin-top:1%;
-font-weight:bold;
-font-family: "Inter";
 margin:2% 0;
-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-#certificateC{
+.pContentGraphicC{
   font-size: 10px;
-  margin-top:9%;  
   font-family: "Inter";
   color:rgb(224, 224, 224);
   text-align:center;
   margin:2% 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-#emailCertificateC{
-  font-size: 10px;
-  padding-top:1.5%;  
-  font-family: "Inter";
-  color:rgb(224, 224, 224);
-  text-align:center;
-  margin:2% 0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+#certificateC{  
+  margin-top:9%;   
+}
+#emailCertificateC{  
+  padding-top:1.5%;   
 }
 #percWrongC{
   font-family: "Outfit";

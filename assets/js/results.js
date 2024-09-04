@@ -26,7 +26,7 @@ const results = () =>{
     }
     
     // grafico aggiornato con le nuove percentuli
-    let grapichC = document.querySelector(".grapichC");
+    let grapichC = document.querySelector(".graphicC");
     grapichC.style.backgroundImage = `conic-gradient(#d20094 0% ${percCorretteC}%, #00ffff 0% ${percWrongC}%)`;
   }
   

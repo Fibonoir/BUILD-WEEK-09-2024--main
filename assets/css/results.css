@@ -20,8 +20,7 @@
 .heroC {
   text-align: center;
   color: white;
-  padding-top:1%;
-  padding-bottom:5%;
+  margin-top: 20%;
 }
 .h1HeroC {
   font-family: "Outfit";
@@ -69,7 +68,7 @@
  
 }
 
-.grapichC::before{
+/* .grapichC::before{
 content:"";
 position:absolute;
 top:0;
@@ -78,22 +77,35 @@ left:0;
 bottom:0;
 border-radius:50%;
 background-image: conic-gradient(#d20094 0% 34%, #00ffff 0% 66%); /*0% sta per sfumatura, e il valore successivo quanto cerchio occupa*/
-mask: radial-gradient(farthest-side, transparent 67%, black 67%); /*permette di rendere trasparente il centro del div, cosicché si vede il contenuto*/
-z-index: 1; 
-}
+/* mask: radial-gradient(farthest-side, transparent 67%, black 67%); /*permette di rendere trasparente il centro del div, cosicché si vede il contenuto*/
+/* z-index: 1; 
+}  */
 .grapichC{
-  width:280px;
-  height:280px;
-  border-radius:50%;
-  position:relative;
-  display:inline-block;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
   vertical-align: top;
-  
+  background-image: conic-gradient(#d20094 0% 34%, #00ffff 0% 66%);
+  mask: radial-gradient(farthest-side, transparent 67%, black 67%); /*permette di rendere trasparente il centro del div, cosicché si vede il contenuto*/
+  z-index: 1;  
 }
 .contentGrapichC{
   position: absolute;
-  left:2rem;
-  top:2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px; /* Adjusted to fit within the circle */
+  height: 240px; /* Adjusted to fit within the circle */
+  text-align: center; 
+  background-color:transparent; 
+  border-radius: 50%; /* Arrotonda per adattarsi al cerchio */
+  padding: 20px;
+  box-sizing: border-box; /* Include il padding nelle dimensioni totali */
+ 
+  
+  
 }
 #pTitleC{
   color:white;
@@ -101,7 +113,9 @@ z-index: 1;
   margin-top:25%;
   font-weight:bold;
   font-family: "Inter";
- margin-right:3%;
+  margin:2% 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Aggiungi un'ombra al testo per migliorarne la leggibilità */
+
 }
 #pSubtitleC{
 color: #00FFFF;
@@ -109,6 +123,8 @@ font-size: 13px;
 margin-top:1%;
 font-weight:bold;
 font-family: "Inter";
+margin:2% 0;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 #certificateC{
   font-size: 10px;
@@ -116,6 +132,8 @@ font-family: "Inter";
   font-family: "Inter";
   color:rgb(224, 224, 224);
   text-align:center;
+  margin:2% 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 #emailCertificateC{
   font-size: 10px;
@@ -123,6 +141,8 @@ font-family: "Inter";
   font-family: "Inter";
   color:rgb(224, 224, 224);
   text-align:center;
+  margin:2% 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 #percWrongC{
   font-family: "Outfit";
@@ -150,9 +170,7 @@ font-family: "Inter";
   font-size: 60px;
   color: white;
 }
-.resultRightC p{
 
-}
 .divButtonC{
   text-align: center;
   margin-block:2.5rem

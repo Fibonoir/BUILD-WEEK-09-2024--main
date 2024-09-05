@@ -138,3 +138,12 @@ button {
     filter: drop-shadow(0 0 12px #00FFFF);
 
 }
+
+.p2-v{
+    display: inline-block;
+    margin: 0 21rem 2rem 0;
+    background-color: #ffffff21;
+    padding: 0.3rem 0.4rem;
+    border-radius: 2px;
+    font-size: medium;
+}

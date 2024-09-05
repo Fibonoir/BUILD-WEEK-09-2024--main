@@ -15,14 +15,14 @@ const results = () =>{
     if(score> questions.length/2){
       document.getElementById("pTitleC").innerText = "Congratulation!";
       document.getElementById("pSubtitleC").innerText= "You passed the exam";
-      document.getElementById("certificateC").innerText ="We'll send you the certificate in a few minutes";
-      document.getElementById("emailCertificateC").innerText =  "Check your email (including promotions/spam folder)";
+      document.getElementById("certificateC").innerText ="We'll send you the certificate in a few minutes. Check your email (including promotions/spam folder)";
+      // document.getElementById("emailCertificateC").innerText =  "Check your email (including promotions/spam folder)";
      
     } else{
-      document.getElementById("pTitleC").innerText = "Ops...";
-      document.getElementById("pSubtitleC").innerText= "You didn't passed the exam";
-      document.getElementById("certificateC").innerText ="You can't receive the certificate" ;
-      document.getElementById("emailCertificateC").innerText = "Study and  try again...good luck!";
+      document.getElementById("pTitleC").innerText = "Ops...So sorry";
+      document.getElementById("pSubtitleC").innerText= "Exam not passed!";
+      document.getElementById("certificateC").innerText ="You can't receive the certificate. Study and  try again...good luck!" ;
+      // document.getElementById("emailCertificateC").innerText = "Study and  try again...good luck!";
     }
     
     // grafico aggiornato con le nuove percentuli

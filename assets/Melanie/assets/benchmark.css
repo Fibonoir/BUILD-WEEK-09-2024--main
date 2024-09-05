@@ -8,8 +8,11 @@ body {
   background-attachment: fixed;
   margin: 0;
   display: table;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
+  width: 90%;
+  height: 90%;
+  
 }
 #logo {
   position: absolute;
@@ -81,9 +84,10 @@ p {
 
 h1 {
   margin-bottom: 3%;
-  font-size: 60px;
+  font-size: 44px;
   color: white;
   font-family: "Outfit", sans-serif;
+  margin-inline: 15%;
 }
 button {
   font-family: "Inter", sans-serif;
@@ -108,9 +112,10 @@ button:hover {
 }
 
 #questionsContainer {
-  margin-top: 300px;
+  margin-top: 15%;
   vertical-align: middle;
   text-align: center;
+  margin-left:10%;
 }
 
 h2 {

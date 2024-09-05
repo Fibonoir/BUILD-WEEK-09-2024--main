@@ -37,9 +37,10 @@
         <p>I promise to answer myself without help from anyone</p>
       </label>
       <button id="proceedButton">PROCEED</button>
+    </div>
     <script>
       document.getElementById("proceedButton").addEventListener("click", function () {
-        var checkbox = document.getElementById("myCheckbox");
+        const checkbox = document.getElementById("myCheckbox");
         if (!checkbox.checked) {
           alert("Please check the box to confirm your promise before proceeding.");
         } else {

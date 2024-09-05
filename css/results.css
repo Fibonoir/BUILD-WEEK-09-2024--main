@@ -29,7 +29,6 @@ body {
   font-family: "Outfit";
   font-size: 60px;
   font-weight: bold;
-  position: relative;
   bottom: 23vh;
   left:6%;
  
@@ -38,10 +37,7 @@ body {
 .pHeroC {
   font-family: "Inter";
   font-size: 16px;
-  position: absolute;
-  top: 20%;
-  right: 24%
-
+ 
 }
 
 .grapichresults{
@@ -54,10 +50,7 @@ body {
   font-size: 60px;
   color: white;
   vertical-align: top;
-  position:relative;
-  right: 12%;
-  bottom: 20vh;
-
+ 
 }
 .resultLeftC h2{
   font-family: "Outfit";
@@ -71,49 +64,41 @@ body {
   color: white;
   text-align:center;
   font-weight: bold;
-  position: absolute;
-  top: 41%;
 }
 #pQuestionsCorrectC{
   font-family: "Outfit";
   font-size: 1.2rem;
   color: white;
   text-align:center;
-  position: absolute;
-  top: 95%;
-  left: 5%;
-
-}
+ }
 .wrapperC{
-  position: absolute;
+  position: relative;
   display: inline-block;
-  right: 38%;
-  top: 30%;
+
 }
 .grapichC{
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  position: relative;
-  vertical-align: top;
+   vertical-align: top;
   background-image: conic-gradient(#d20094 0% 34%, #00ffff 0% 66%);
   mask: radial-gradient(farthest-side, transparent 67%, black 67%); /*permette di rendere trasparente il centro del div, cosicché si vede il contenuto*/
   z-index: 1;  
 }
 .contentGrapichC{
   position: absolute;
-  top: 56%;
-  left: 42%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 280px; /*heigth e width date per "entrare" nel cerchio*/
-  height: 280px; 
-  text-align: center; 
-  background-color:transparent; 
-  border-radius: 50%; /* Arrotondata per adattarsi al cerchio */
- padding-top: 25%; 
- padding-inline:15%; /* 40px 20px; */
-  box-sizing: border-box; 
-  z-index: 2;
+  width: 210px;
+  height: 210px;
+  /* text-align: center; */
+  background-color: transparent;
+  border-radius: 50%;
+  padding-top: 20px;
+  padding-inline: 15px;
+  box-sizing: border-box;
+  z-index: 2
 
 
 }
@@ -164,29 +149,20 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   color: white;
   text-align:center;
   font-weight: bold;
-  position: absolute;
-  top: 41%;
-  left: 8%;
-}
+  }
 #pQuestionsWrongC{
   font-family: "Outfit";
   font-size: 1.2rem;
   color: white;
   text-align:center; 
-  position: absolute;
-  top: 95%;
-  left: 20%;
-
+ 
 }
 
 
 .resultRightC{
   display: inline-block;
   vertical-align: top;
-  position: relative;
-  left: 22%;
-  bottom: 20vh;
- }
+}
 .resultRightC h2{
   font-family: "Outfit";
   font-size: 60px;

@@ -3,10 +3,14 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin-inline: 550px;
-    margin-top: 50px;
-    margin-bottom: 0px;
+    margin: 0 auto 2rem;
+    text-align: center;
 }
+.logo-container {
+    text-align: left;
+    padding: 1rem 2rem;
+}
+
 .logo-container img{
     width: 200px;
     margin-bottom: 50px;
@@ -37,6 +41,10 @@ body{
     font-family: 'inter', sans-serif;
     margin-bottom: 50px;
 }
+#list-container {
+    display: inline-block;
+    text-align: left;
+}
 #list-container li{
     color: white;
     margin-top: 5px;
@@ -52,7 +60,7 @@ body{
     height: 0;
 }
 .custom-checkbox {
-    display: flex;
+    display: inline-block;
     align-items: center;
     position: relative;
     cursor: pointer;
@@ -72,6 +80,11 @@ body{
     font-family: 'inter', sans-serif;
     font-weight: bold;
 }
+
+.checkmark {
+    display: inline-block;
+}
+
 .custom-checkbox .checkmark {
     width: 20px;
     height: 20px;
@@ -92,7 +105,7 @@ body{
     transform: rotate(45deg);
 }
 .custom-checkbox p {
-    display: block;
+    display: inline-block;
     color: white;
     font-size: 14px;
     font-family: 'inter', sans-serif;
@@ -101,18 +114,16 @@ body{
 }
 .checkbox-container {
     display: flex;
-    align-items: center;
+    justify-content: center;
     gap: 10px;
     margin-top: 20px;
 }
 button {
-    display: inline-block;
     margin-top: 70px;
     background-color: #00ffff;
     color: black; 
     border: none;
     padding: 20px 60px;
-    text-align: center;
     text-decoration: none;
     font-size: 20px; 
     font-weight: bold;

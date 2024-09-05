@@ -23,20 +23,21 @@ body {
 .heroC {
   text-align: center;
   color: white;
-  margin-top: 17%;
+  margin-top: 5%;
+ 
 }
 .h1HeroC {
   font-family: "Outfit";
   font-size: 60px;
   font-weight: bold;
-  bottom: 23vh;
-  left:6%;
+ 
  
 }
 
-.pHeroC {
+.h6HeroC {
   font-family: "Inter";
   font-size: 16px;
+  margin-top:-35px;
  
 }
 
@@ -52,18 +53,21 @@ body {
   vertical-align: top;
  
 }
-.resultLeftC h2{
+.resultLeftC{
   font-family: "Outfit";
   font-size: 60px;
   color: white;
   text-align:center;
+  margin-right:12%;
 }
+
 #percCorretteC{
   font-family: "Outfit";
   font-size: 60px;
   color: white;
   text-align:center;
   font-weight: bold;
+  padding-left: 70%;
 }
 #pQuestionsCorrectC{
   font-family: "Outfit";
@@ -149,12 +153,14 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   color: white;
   text-align:center;
   font-weight: bold;
+  margin-left: -90%;
   }
 #pQuestionsWrongC{
   font-family: "Outfit";
   font-size: 1.2rem;
   color: white;
   text-align:center; 
+
  
 }
 
@@ -162,19 +168,22 @@ text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 .resultRightC{
   display: inline-block;
   vertical-align: top;
-}
-.resultRightC h2{
+  }
+.resultRightC {
   font-family: "Outfit";
   font-size: 60px;
   color: white;
+  margin-left: 12%
+}
+.titleWroC{
+padding-left: 15%;
+margin-left: -75%;
 }
 
 .divButtonC{
   text-align: center;
-  margin-block: 2.5rem;
-  position: relative;
-  top: 4vh;
-  margin-left:12%; 
+  /* margin-block: 2.5rem; */
+  margin-left:2%; 
 }
 
 

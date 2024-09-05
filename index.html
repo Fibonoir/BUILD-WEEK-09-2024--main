@@ -3,80 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/Melanie/assets/benchmark.css" />
-    <link rel="stylesheet" href="./assets/css/results.css"/>
+    <link rel="stylesheet" href="./css/benchmark.css" />
+    <link rel="stylesheet" href="./css/results.css" />
     <title>Benchmark</title>
   </head>
   <body>
     <header>
-    <div id="logo">
-      <img src="./assets/Melanie/assets/epicode_logo.png" width="170px;" alt="logo epicode" />
-    </div>
-</header>
-<main>
-    <div class="benchmarkPage">
-    <div id="countdown">
-      <svg class="progress-ring" width="150" height="150">
-        <circle
-          class="progress-ring__background"
-          cx="75"
-          cy="75"
-          r="70"
-        ></circle>
-        <circle class="progress-ring__circle" cx="75" cy="75" r="70"></circle>
-      </svg>
-      <p>
-        SECONDS <br /><br />
-        <span id="seconds">60</span><br /><br />REMAINING
-      </p>
-    </div>
-    <div id="questionsContainer">
-      <h1>Domanda 1</h1>
-      <button id="risposta1">Clicca qui</button>
-      <button id="risposta2">Clicca qui</button>
-      <button id="risposta3">Clicca qui</button>
-      <button id="risposta4">Clicca qui</button>
-      <h2>QUESTION 1 <span> /10</span></h2>
-    </div>
-</div>
-
-<div class="resultsPage hidden ">
-    <div class="heroC">
-        <h1 class="h1HeroC">Results</h1>
-        <p class="pHeroC">The summary of your answers</p>
+      <div id="logo">
+        <img src="./asset/epicode_logo.png" width="170px;" alt="logo epicode" />
       </div>
-      <div class="grapichresults">
-        <div class="resultLeftC">
-          <h2>Correct</h2>
-          <h2 id="percCorretteC"></h2>
-          <p id="pQuestionsCorrectC"></p>
+    </header>
+    <main>
+      <div class="benchmarkPage">
+        <div id="countdown">
+          <svg class="progress-ring" width="150" height="150">
+            <circle class="progress-ring__background" cx="75" cy="75" r="70"></circle>
+            <circle class="progress-ring__circle" cx="75" cy="75" r="70"></circle>
+          </svg>
+          <p>
+            SECONDS <br /><br />
+            <span id="seconds">60</span><br /><br />REMAINING
+          </p>
         </div>
+        <div id="questionsContainer">
+          <h1>Domanda 1</h1>
+          <button id="risposta1">Clicca qui</button>
+          <button id="risposta2">Clicca qui</button>
+          <button id="risposta3">Clicca qui</button>
+          <button id="risposta4">Clicca qui</button>
+          <h2>QUESTION 1 <span> /10</span></h2>
+        </div>
+      </div>
 
-        <div class="wrapperC">
-        <div class="grapichC">
+      <div class="resultsPage hidden">
+        <div class="heroC">
+          <h1 class="h1HeroC">Results</h1>
+          <p class="pHeroC">The summary of your answers</p>
+        </div>
+        <div class="grapichresults">
+          <div class="resultLeftC">
+            <h2>Correct</h2>
+            <h2 id="percCorretteC"></h2>
+            <p id="pQuestionsCorrectC"></p>
           </div>
-          <div class="contentGrapichC">
-            <p id="pTitleC"></p>
-            <p id="pSubtitleC"></p>
-            <p id="certificateC"> </p>
-            <!-- <p id="emailCertificateC"></p> -->
-         </div>
+
+          <div class="wrapperC">
+            <div class="grapichC"></div>
+            <div class="contentGrapichC">
+              <p id="pTitleC"></p>
+              <p id="pSubtitleC"></p>
+              <p id="certificateC"></p>
+              <!-- <p id="emailCertificateC"></p> -->
+            </div>
+          </div>
+
+          <div class="resultRightC">
+            <h2>Wrong</h2>
+            <h2 id="percWrongC"></h2>
+            <p id="pQuestionsWrongC"></p>
+          </div>
         </div>
 
-        <div class="resultRightC">
-          <h2>Wrong</h2>
-          <h2 id="percWrongC"> </h2>
-          <p id="pQuestionsWrongC"></p>
+        <div class="divButtonC">
+          <button id="buttonC">RATE US</button>
         </div>
       </div>
+    </main>
 
-      <div class="divButtonC">
-        <button id="buttonC">RATE US</button>
-      </div>
-    </div>
-</main>
-
-    <script src="./assets/Melanie/benchmark.js"></script>
-    <script src ="./assets/js/results.js"></script>
+    <script src="./js/benchmark.js"></script>
+    <script src="./js/results.js"></script>
   </body>
 </html>

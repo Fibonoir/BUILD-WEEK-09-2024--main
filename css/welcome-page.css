@@ -3,27 +3,28 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 0 auto 2rem;
-    text-align: center;
+    text-align: left;
+    margin: 0 20%;
+    overflow: hidden;
 }
 .logo-container {
     text-align: left;
-    padding: 1rem 2rem;
+    padding: 2rem 0 0;
 }
 
 .logo-container img{
     width: 200px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .titolo h1{
     color: white;
-    font-size: 80px;
+    font-size: 60px;
     line-height: 0.8;
     font-family: 'Outfit', sans-serif;
 }
 .titolo span{
     color: white;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: lighter;
     font-family: 'Outfit', sans-serif;
 }
@@ -39,11 +40,15 @@ body{
     margin-top: 0px;
     font-weight: lighter;
     font-family: 'inter', sans-serif;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 #list-container {
     display: inline-block;
     text-align: left;
+}
+#list-container ul {
+    margin: 0;
+    padding: 0 1rem;
 }
 #list-container li{
     color: white;
@@ -60,18 +65,17 @@ body{
     height: 0;
 }
 .custom-checkbox {
-    display: inline-block;
+    display: flex;
     align-items: center;
     position: relative;
     cursor: pointer;
-    margin-top: 70px;
 }
 .custom-checkbox .checkmark {
     width: 17px;
     height: 17px;
     border: 2px solid white;
     background-color: transparent;
-    position: relative;
+    display: inline-block;
     margin-right: 8px;
 }
 .custom-checkbox p {
@@ -110,16 +114,17 @@ body{
     font-size: 14px;
     font-family: 'inter', sans-serif;
     font-weight: bold;
-    padding-right: 90px;
+    margin: 0 14rem 0 0;
 }
 .checkbox-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 10px;
-    margin-top: 20px;
+    align-items: center;
+    margin: 4.5rem auto 2rem;
 }
 button {
-    margin-top: 70px;
+    margin: 0rem 2rem 0rem;    
     background-color: #00ffff;
     color: black; 
     border: none;

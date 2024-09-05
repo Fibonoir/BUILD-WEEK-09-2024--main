@@ -176,11 +176,11 @@ function showFinalScore() {
   scoreMessage.textContent =
     "Hai ottenuto " + score + " su " + questions.length + " domande corrette!";
   questionContainer.appendChild(scoreMessage);*/
-  document.querySelector(".Melanie").classList.add("hidden");
+  document.querySelector(".benchmarkPage").classList.add("hidden");
 
 //rimuovo l'hidden dalla classe corinne
 
-document.querySelector(".Corinne").classList.remove("hidden")
+document.querySelector(".resultsPage").classList.remove("hidden")
 
   results(); //chiamo la funzione successiva che stamperà i risultati
 }

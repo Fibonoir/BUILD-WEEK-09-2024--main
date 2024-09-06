@@ -72,11 +72,9 @@ body {
 
 }
 .wrapperC{
-  position: absolute;
+  position: relative;
   display: inline-block;
-  right: 38%;
-  top: 30%;
-}
+  }
 .grapichC{
   width: 320px;
   height: 320px;

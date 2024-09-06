@@ -1,6 +1,17 @@
 const results = () =>{
 
-  let percCorretteC = (score / questions.length) * 100;
+  const params = new URLSearchParams(window.location.search);
+  console.log(params); // This should log the URLSearchParams object
+  console.log(params.toString()); // This should log the query string
+
+  const punteggio = params.get('punteggio');
+  const totDomande = params.get('totDomande');
+
+  console.log(punteggio); // This should log the value of 'punteggio'
+  console.log(totDomande);
+
+
+  let percCorretteC = (punteggio / totDomande) * 100;
     let percWrongC = 100 - percCorretteC;
   
     // ritorna le percentuali aggiornate e arrotondate grazie a .toFixed
@@ -8,11 +19,11 @@ const results = () =>{
     document.getElementById("percWrongC").innerText = percWrongC.toFixed(1) + "%";
   
     // restituisce il numero di risposte corrette/dbagliate sul totale
-    document.getElementById("pQuestionsCorrectC").innerText = score + "/" + questions.length + " questions";
-    document.getElementById("pQuestionsWrongC").innerText = (questions.length - score) + "/" + questions.length + " questions";
+    document.getElementById("pQuestionsCorrectC").innerText = punteggio + "/" + totDomande + " questions";
+    document.getElementById("pQuestionsWrongC").innerText = (totDomande - punteggio) + "/" + totDomande + " questions";
   
     // Aggiorna i messaggi di congratulazioni e altri messaggi
-    if(score> questions.length/2){
+    if(punteggio> totDomande/2){
       document.getElementById("pTitleC").innerText = "Congratulation!";
       document.getElementById("pSubtitleC").innerText= "You passed the exam";
       document.getElementById("certificateC").innerText ="We'll send you the certificate in a few minutes. Check your email (including promotions/spam folder)";
@@ -26,7 +37,11 @@ const results = () =>{
     }
     
     // grafico aggiornato con le nuove percentuli
-    let grapichC = document.querySelector(".graphicC");
-    grapichC.style.backgroundImage = `conic-gradient(#d20094 0% ${percCorretteC}%, #00ffff 0% ${percWrongC}%)`;
+    let graphicC = document.getElementById("graphicC")
+    graphicC.style.backgroundImage = `conic-gradient(#d20094 0% ${percCorretteC}%, #00ffff 0% ${percWrongC}%)`;
   }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    results();
+  });
   

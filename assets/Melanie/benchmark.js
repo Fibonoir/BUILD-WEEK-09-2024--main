@@ -97,6 +97,27 @@ let countdown = 60;
 let currentQuestionIndex = 0;
 let score = 0;
 
+
+function loadResults() {
+  
+  function savePar() {
+    const result = {
+      punteggio: score,
+      totDomande: questions.length
+    }
+    return result;
+  }
+  
+  console.log(savePar());
+  
+  const params = new URLSearchParams(savePar()).toString();
+  window.location.href = `result.html?${params}`;
+
+  /*let scoreMessage = document.createElement("h2");
+  scoreMessage.textContent =
+    "Hai ottenuto " + score + " su " + questions.length + " domande corrette!";
+  questionContainer.appendChild(scoreMessage);*/
+}
 function showQuestion() {
   let questionContainer = document.getElementById("questionsContainer");
   let currentQuestion = questions[currentQuestionIndex];
@@ -159,31 +180,14 @@ function handleAnswer(selectedAnswer) {
       showQuestion();
     } else {
       document.getElementById("countdown").style.display = "none";
-      showFinalScore();
+      loadResults();
     }
   }, 1000);
 }
 
-function showFinalScore() {
-  let questionContainer = document.getElementById("questionsContainer");
-  questionContainer.innerHTML = "";
-
-  let finalMessage = document.createElement("h1");
-  finalMessage.textContent = "Quiz Terminato!";
-  questionContainer.appendChild(finalMessage);
-
-  /*let scoreMessage = document.createElement("h2");
-  scoreMessage.textContent =
-    "Hai ottenuto " + score + " su " + questions.length + " domande corrette!";
-  questionContainer.appendChild(scoreMessage);*/
-  document.querySelector(".benchmarkPage").classList.add("hidden");
-
 //rimuovo l'hidden dalla classe corinne
 
-document.querySelector(".resultsPage").classList.remove("hidden")
 
-  results(); //chiamo la funzione successiva che stamperà i risultati
-}
 
 let secondsElement = document.getElementById("seconds");
 let circle = document.querySelector(".progress-ring__circle");
@@ -273,9 +277,12 @@ function handleTimeOut() {
       showQuestion();
     } else {
       document.getElementById("countdown").style.display = "none";
-      showFinalScore();
+      console.log("Final question answered, loading results..."); // Debugging statement
+      loadResults();
+
     }
   }, 1000);
 }
 
-document.addEventListener("DOMContentLoaded", showQuestion);
+
+document.addEventListener("DOMContentLoaded", showQuestion)

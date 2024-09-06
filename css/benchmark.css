@@ -7,6 +7,7 @@ body {
   background-position: center left;
   background-attachment: fixed;
   margin: 0;
+  overflow: hidden;
 
 }
 
@@ -26,7 +27,7 @@ body {
   text-align: center;
   position: absolute;
   top: 40px;
-  right: 180px;
+  right: 80px;
   z-index: 10;
   font-family: "Outfit", sans-serif;
   color: white;
@@ -111,14 +112,13 @@ button:hover {
 }
 
 #questionsContainer {
-  margin-top: 15%;
+  margin-top: 12%;
   vertical-align: middle;
   text-align: center;
-  margin-left: 10%;
 }
 
 h2 {
-  margin-top: 10%;
+  margin-top: 5%;
   text-align: center;
   color: white;
   font-family: "Outfit", sans-serif;

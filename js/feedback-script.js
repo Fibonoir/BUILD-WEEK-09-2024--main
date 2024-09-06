@@ -48,4 +48,8 @@ document.getElementById("review-form").addEventListener("submit", function(event
     inputField.value = "";
 	document.getElementById("par").classList.remove("hidden");
 	document.getElementById("input-form").style.marginBottom = "0.5rem";
+	document.getElementById('input-form').addEventListener('input', function() {
+		document.querySelector('.p2-v').classList.add('hidden');
+		document.getElementById("input-form").style.marginBottom = "3.5rem";
+	});
 })

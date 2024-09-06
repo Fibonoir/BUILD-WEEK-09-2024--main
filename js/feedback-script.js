@@ -46,4 +46,7 @@ document.getElementById("review-form").addEventListener("submit", function(event
 	event.preventDefault();
     const inputField = document.getElementById("input-form");
     inputField.value = "";
-});
+	const par  = document.getElementById("par");
+	par.classList.remove("hidden");
+	document.getElementById("input-form").style.marginBottom = "0.5rem";
+})

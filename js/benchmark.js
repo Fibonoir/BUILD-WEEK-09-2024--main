@@ -114,6 +114,66 @@ function loadResults() {
   window.location.href = `result.html?${params}`;
 }
 
+
+
+
+let secondsElement = document.getElementById("seconds");
+let circle = document.querySelector(".progress-ring__circle");
+let radius = circle.r.baseVal.value;
+let circumference = 2 * Math.PI * radius;
+
+circle.style.strokeDasharray = `${circumference} ${circumference}`;
+circle.style.strokeDashoffset = circumference;
+
+function setProgress(percent) {
+  let offset = circumference - (percent / 100) * circumference;
+  circle.style.strokeDashoffset = offset;
+}
+
+let timer;
+
+function startTimer() {
+  clearInterval(timer);
+  countdown = 60;
+
+  secondsElement.innerHTML = countdown;
+  setProgress((countdown / 60) * 100);
+
+  timer = setInterval(() => {
+    countdown--;
+    secondsElement.innerHTML = countdown;
+    setProgress((countdown / 60) * 100);
+
+    if (countdown === 0) {
+      clearInterval(timer);
+      handleTimeOut();
+    }
+  }, 1000);
+}
+
+function handleTimeOut() {
+  let currentQuestion = questions[currentQuestionIndex];
+  let answerButtons = document.querySelectorAll("#answers button");
+
+  answerButtons.forEach((button) => {
+    button.disabled = true;
+    if (button.textContent === currentQuestion.correct_answer) {
+      button.classList.add("verde");
+    } else {
+      button.classList.add("rosso");
+    }
+  });
+
+  setTimeout(() => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      document.getElementById("countdown").style.display = "none";
+    }
+  }, 1000);
+}
+
 function showQuestion() {
   let questionContainer = document.getElementById("questionsContainer");
   let currentQuestion = questions[currentQuestionIndex];
@@ -147,8 +207,8 @@ function showQuestion() {
   questionNumber.innerHTML =
     "QUESTION " + (currentQuestionIndex + 1) + "<span>/10</span>";
   questionContainer.appendChild(questionNumber);
-  countdown = 60;
-  countdown.reset();
+  
+  startTimer();
 }
 
 function handleAnswer(selectedAnswer) {
@@ -161,8 +221,6 @@ function handleAnswer(selectedAnswer) {
 
     if (button.textContent === currentQuestion.correct_answer) {
       button.classList.add("verde");
-    } else if (button.textContent === selectedAnswer) {
-      button.classList.add("rosso");
     }
   });
 
@@ -181,63 +239,5 @@ function handleAnswer(selectedAnswer) {
   }, 1000);
 }
 
-
-
-
-let secondsElement = document.getElementById("seconds");
-let circle = document.querySelector(".progress-ring__circle");
-let radius = circle.r.baseVal.value;
-let circumference = 2 * Math.PI * radius;
-
-circle.style.strokeDasharray = `${circumference} ${circumference}`;
-circle.style.strokeDashoffset = circumference;
-
-function setProgress(percent) {
-  let offset = circumference - (percent / 100) * circumference;
-  circle.style.strokeDashoffset = offset;
-}
-
-let timer;
-
-function startTimer() {
-  clearInterval(timer);
-  countdown = 60;
-
-  timer = setInterval(() => {
-    secondsElement.innerHTML = countdown;
-    setProgress((countdown / 60) * 100);
-
-    if (countdown === 0) {
-      clearInterval(timer);
-      handleTimeOut();
-    } else {
-      countdown--;
-    }
-  }, 1000);
-}
-
-function handleTimeOut() {
-  let currentQuestion = questions[currentQuestionIndex];
-  let answerButtons = document.querySelectorAll("#answers button");
-
-  answerButtons.forEach((button) => {
-    button.disabled = true;
-    if (button.textContent === currentQuestion.correct_answer) {
-      button.classList.add("verde");
-    } else {
-      button.classList.add("rosso");
-    }
-  });
-
-  setTimeout(() => {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-      showQuestion();
-    } else {
-      document.getElementById("countdown").style.display = "none";
-    }
-  }, 1000);
-}
-
-
 document.addEventListener("DOMContentLoaded", showQuestion)
+

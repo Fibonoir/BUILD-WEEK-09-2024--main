@@ -7,8 +7,9 @@ body {
   background-position: center left;
   background-attachment: fixed;
   margin: 0;
-  overflow: hidden;
+
 }
+
 #logo {
   position: absolute;
   top: 50px;
@@ -133,16 +134,6 @@ span {
   color: white;
 }
 
-.rosso {
-  background-color: red;
-  color: white;
-}
-
 .no-hover {
   pointer-events: none;
-}
-
-button.verde.no-hover:hover,
-button.rosso.no-hover:hover {
-  background: inherit;
 }

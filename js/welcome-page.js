@@ -3,6 +3,6 @@ document.getElementById("proceedButton").addEventListener("click", function () {
     if (!checkbox.checked) {
       alert("Please check the box to confirm your promise before proceeding.");
     } else {
-      window.location.href = "./index.html";
+      window.location.href = "./benchmark.html";
     }
   });

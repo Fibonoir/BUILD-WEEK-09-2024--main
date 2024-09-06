@@ -97,6 +97,23 @@ let countdown = 60;
 let currentQuestionIndex = 0;
 let score = 0;
 
+
+function loadResults() {
+  
+  function savePar() {
+    const result = {
+      punteggio: score,
+      totDomande: questions.length
+    }
+    return result;
+  }
+  
+  console.log(savePar());
+  
+  const params = new URLSearchParams(savePar()).toString();
+  window.location.href = `result.html?${params}`;
+}
+
 function showQuestion() {
   let questionContainer = document.getElementById("questionsContainer");
   let currentQuestion = questions[currentQuestionIndex];
@@ -159,31 +176,13 @@ function handleAnswer(selectedAnswer) {
       showQuestion();
     } else {
       document.getElementById("countdown").style.display = "none";
-      showFinalScore();
+      loadResults();
     }
   }, 1000);
 }
 
-function showFinalScore() {
-  let questionContainer = document.getElementById("questionsContainer");
-  questionContainer.innerHTML = "";
 
-  let finalMessage = document.createElement("h1");
-  finalMessage.textContent = "Quiz Terminato!";
-  questionContainer.appendChild(finalMessage);
 
-  /*let scoreMessage = document.createElement("h2");
-  scoreMessage.textContent =
-    "Hai ottenuto " + score + " su " + questions.length + " domande corrette!";
-  questionContainer.appendChild(scoreMessage);*/
-  document.querySelector(".benchmarkPage").classList.add("hidden");
-
-//rimuovo l'hidden dalla classe corinne
-
-document.querySelector(".resultsPage").classList.remove("hidden")
-
-  results(); //chiamo la funzione successiva che stamperà i risultati
-}
 
 let secondsElement = document.getElementById("seconds");
 let circle = document.querySelector(".progress-ring__circle");
@@ -217,43 +216,6 @@ function startTimer() {
   }, 1000);
 }
 
-function showQuestion() {
-  let questionContainer = document.getElementById("questionsContainer");
-  let currentQuestion = questions[currentQuestionIndex];
-
-  questionContainer.innerHTML = "";
-
-  let questionTitle = document.createElement("h1");
-  questionTitle.textContent = currentQuestion.question;
-  questionContainer.appendChild(questionTitle);
-
-  let answersContainer = document.createElement("div");
-  answersContainer.id = "answers";
-  questionContainer.appendChild(answersContainer);
-
-  let allAnswers = [
-    ...currentQuestion.incorrect_answers,
-    currentQuestion.correct_answer,
-  ];
-  allAnswers.sort(() => Math.random() - 0.5);
-
-  allAnswers.forEach(function (answer) {
-    let answerButton = document.createElement("button");
-    answerButton.textContent = answer;
-    answerButton.addEventListener("click", function () {
-      handleAnswer(answer);
-    });
-    answersContainer.appendChild(answerButton);
-  });
-
-  let questionNumber = document.createElement("h2");
-  questionNumber.innerHTML =
-    "QUESTION " + (currentQuestionIndex + 1) + "<span>/10</span>";
-  questionContainer.appendChild(questionNumber);
-
-  startTimer();
-}
-
 function handleTimeOut() {
   let currentQuestion = questions[currentQuestionIndex];
   let answerButtons = document.querySelectorAll("#answers button");
@@ -273,9 +235,9 @@ function handleTimeOut() {
       showQuestion();
     } else {
       document.getElementById("countdown").style.display = "none";
-      showFinalScore();
     }
   }, 1000);
 }
 
-document.addEventListener("DOMContentLoaded", showQuestion);
+
+document.addEventListener("DOMContentLoaded", showQuestion)

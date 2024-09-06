@@ -26,13 +26,13 @@ const results = () =>{
     if(punteggio> totDomande/2){
       document.getElementById("pTitleC").innerText = "Congratulation!";
       document.getElementById("pSubtitleC").innerText= "You passed the exam";
-      document.getElementById("certificateC").innerText ="We'll send you the certificate in a few minutes. Check your email (including promotions/spam folder)";
+      document.getElementById("certificateC").innerText ="We'll send you the certificate in a few minutes. \n Check your email (including promotions/spam folder)";
       // document.getElementById("emailCertificateC").innerText =  "Check your email (including promotions/spam folder)";
      
     } else{
       document.getElementById("pTitleC").innerText = "Ops...So sorry";
       document.getElementById("pSubtitleC").innerText= "Exam not passed!";
-      document.getElementById("certificateC").innerText ="You can't receive the certificate. Study and  try again...good luck!" ;
+      document.getElementById("certificateC").innerText ="You can't receive the certificate. \n Study and  try again...good luck!" ;
       // document.getElementById("emailCertificateC").innerText = "Study and  try again...good luck!";
     }
     

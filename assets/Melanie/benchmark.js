@@ -112,12 +112,8 @@ function loadResults() {
   
   const params = new URLSearchParams(savePar()).toString();
   window.location.href = `result.html?${params}`;
-
-  /*let scoreMessage = document.createElement("h2");
-  scoreMessage.textContent =
-    "Hai ottenuto " + score + " su " + questions.length + " domande corrette!";
-  questionContainer.appendChild(scoreMessage);*/
 }
+
 function showQuestion() {
   let questionContainer = document.getElementById("questionsContainer");
   let currentQuestion = questions[currentQuestionIndex];
@@ -185,7 +181,6 @@ function handleAnswer(selectedAnswer) {
   }, 1000);
 }
 
-//rimuovo l'hidden dalla classe corinne
 
 
 
@@ -221,43 +216,6 @@ function startTimer() {
   }, 1000);
 }
 
-function showQuestion() {
-  let questionContainer = document.getElementById("questionsContainer");
-  let currentQuestion = questions[currentQuestionIndex];
-
-  questionContainer.innerHTML = "";
-
-  let questionTitle = document.createElement("h1");
-  questionTitle.textContent = currentQuestion.question;
-  questionContainer.appendChild(questionTitle);
-
-  let answersContainer = document.createElement("div");
-  answersContainer.id = "answers";
-  questionContainer.appendChild(answersContainer);
-
-  let allAnswers = [
-    ...currentQuestion.incorrect_answers,
-    currentQuestion.correct_answer,
-  ];
-  allAnswers.sort(() => Math.random() - 0.5);
-
-  allAnswers.forEach(function (answer) {
-    let answerButton = document.createElement("button");
-    answerButton.textContent = answer;
-    answerButton.addEventListener("click", function () {
-      handleAnswer(answer);
-    });
-    answersContainer.appendChild(answerButton);
-  });
-
-  let questionNumber = document.createElement("h2");
-  questionNumber.innerHTML =
-    "QUESTION " + (currentQuestionIndex + 1) + "<span>/10</span>";
-  questionContainer.appendChild(questionNumber);
-
-  startTimer();
-}
-
 function handleTimeOut() {
   let currentQuestion = questions[currentQuestionIndex];
   let answerButtons = document.querySelectorAll("#answers button");
@@ -277,9 +235,6 @@ function handleTimeOut() {
       showQuestion();
     } else {
       document.getElementById("countdown").style.display = "none";
-      console.log("Final question answered, loading results..."); // Debugging statement
-      loadResults();
-
     }
   }, 1000);
 }

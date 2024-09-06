@@ -221,6 +221,8 @@ function handleAnswer(selectedAnswer) {
 
     if (button.textContent === currentQuestion.correct_answer) {
       button.classList.add("verde");
+    } else if (button.textContent === selectedAnswer) {
+      button.classList.add("rosso");
     }
   });
 
